@@ -1,0 +1,35 @@
+<div class="row">
+
+    <div class="col-1"></div>
+
+
+    <div class="col">
+        <h2>Prueba: ngIf</h2>
+        <div class="card card" *ngIf="mostrar">
+            <img src="https://images.pexels.com/photos/2264753/pexels-photo-2264753.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+        </div>
+        <button (click)="mostrar = !mostrar" class="btn btn-primary btn-block">
+            Mostrar / Ocultar
+        </button>
+    </div>
+
+    <div class="col">
+        <h2>Prueba: ngFor</h2>
+        <div class="card">
+            <div class="card-header">
+                Nombres
+            </div>
+            <ul class="list-group list-group-flush">
+                <li *ngFor="let p of personas; let i = index;" class="list-group-item">{{ p }} - {{ i }}</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-1"></div>
+
+</div>
+
+<hr>
