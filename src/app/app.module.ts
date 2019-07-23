@@ -7,6 +7,9 @@ import { BodyComponent } from './componentes/body/body.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { AcercaDeComponent } from './componentes/acerca-de/acerca-de.component';
 import { APPROUTING } from './app.routes';
+import { EmpleadosComponent } from './componentes/empleados/empleados.component';
+import { EmpleadosService } from './services/empleados.services';
+import { DesEmpleadoComponent } from './componentes/des-empleado/des-empleado.component';
 
 @NgModule({
   declarations: [
@@ -14,13 +17,17 @@ import { APPROUTING } from './app.routes';
     HeaderComponent,
     BodyComponent,
     FooterComponent,
-    AcercaDeComponent
+    AcercaDeComponent,
+    EmpleadosComponent,
+    DesEmpleadoComponent
   ],
   imports: [
     BrowserModule,
     APPROUTING
   ],
-  providers: [],
+  providers: [
+    EmpleadosService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
