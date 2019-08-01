@@ -7,11 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BodyComponent implements OnInit {
 
-  mostrar: any = true;
+  accion = 'Ocultar';
+  mostrar = true;
   personas: any = ['Johnny', 'Gustavo', 'Edisson', 'Alexander'];
   constructor() { }
 
   ngOnInit() {
+  }
+
+  clickBtn(): void {
+    this.mostrar = !this.mostrar;
+    if (this.mostrar) {
+      this.accion = 'Ocultar';
+    } else {
+      this.accion = 'Mostras';
+    }
   }
 
 }

@@ -59,6 +59,10 @@ export class EmpleadosService {
     getEmpleado(id: number) {
         return this.empleados[id];
     }
+
+    agregarEmpleado(empleado: Empleado) {
+        this.empleados.push(empleado);
+    }
 }
 
 export interface Empleado {

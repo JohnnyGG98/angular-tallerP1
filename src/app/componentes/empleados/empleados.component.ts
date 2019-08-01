@@ -11,6 +11,8 @@ export class EmpleadosComponent implements OnInit {
 
   empleados: any = [];
   empleado: Empleado;
+  verInfo = false;
+  idEmpleado: number;
 
   constructor(private empleadoService: EmpleadosService, private ruter: Router) {
     this.empleados = empleadoService.getEmpleados();
@@ -20,6 +22,23 @@ export class EmpleadosComponent implements OnInit {
   getEmpleado(id: number) {
     this.empleado = this.empleadoService.getEmpleado(id);
     console.log(this.empleado);
+  }
+
+  getEmpleadoRuta(): void {
+    if (this.idEmpleado != null) {
+      this.ruter.navigate(['empleado', this.idEmpleado]);
+    }
+  }
+
+  mostrarIformacion( id: number ) {
+    this.verInfo = true;
+    this.empleado = this.empleadoService.getEmpleado(id);
+    this.idEmpleado = id;
+  }
+
+  ocultarInfo(): void {
+    this.verInfo = false;
+    this.empleado = {cedula: '', nombre: '', apellido: '', img: ''};
   }
 
   ngOnInit() {
